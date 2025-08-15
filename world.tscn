@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj7sc3pwrfmc8"]
+
+[ext_resource type="Texture2D" uid="uid://7pngbesl4spx" path="res://Ase/Tileset/TileSet.png" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://c2mlsmu1b4loe" path="res://world.gd" id="2_aqk2v"]
+[ext_resource type="Script" uid="uid://beoypslvqfr8f" path="res://generation.gd" id="3_036b0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwbse"]
+texture = ExtResource("1_tlwt5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+0:9/0 = 0
+0:10/0 = 0
+0:11/0 = 0
+0:12/0 = 0
+0:13/0 = 0
+0:14/0 = 0
+0:15/0 = 0
+0:16/0 = 0
+0:17/0 = 0
+0:18/0 = 0
+0:19/0 = 0
+0:20/0 = 0
+0:21/0 = 0
+0:22/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+9:0/0 = 0
+8:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+6:1/0 = 0
+9:1/0 = 0
+7:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+8:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pkg7o"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_dwbse")
+
+[node name="World" type="TileMapLayer"]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_pkg7o")
+script = ExtResource("2_aqk2v")
+
+[node name="Generation" type="Node" parent="."]
+script = ExtResource("3_036b0")

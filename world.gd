@@ -1,0 +1,58 @@
+extends TileMapLayer
+
+
+
+func _ready() -> void:
+	seed(randi())
+	
+	var tMap = $Generation.generate_tilemap(1024,randi())
+	print("world gen took" + str(Time.get_ticks_msec()/1000))
+	for x in tMap.size():
+		for y in tMap.size():
+			if tMap[x][y] == "grassland":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(0,9),0))
+			elif tMap[x][y] == "forest":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(1,9),1))
+			elif tMap[x][y] == "pine forest":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(1,4),2))
+			elif tMap[x][y] == "taiga":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,3))
+			elif tMap[x][y] == "rain forest":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,4))
+			elif tMap[x][y] == "tropical rainforest":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,5))
+			elif tMap[x][y] == "savanna":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,6))
+			elif tMap[x][y] == "cold desert":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,7))
+			elif tMap[x][y] == "hot desert":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,8))
+			elif tMap[x][y] == "tundra":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,9))
+			elif tMap[x][y] == "asphalt":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,10))
+			elif tMap[x][y] == "lava":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,11))
+			elif tMap[x][y] == "salt":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,12))
+			elif tMap[x][y] == "ice plain":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,13))
+			elif tMap[x][y] == "beach":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,14))
+			elif tMap[x][y] == "swamp":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,15))
+			elif tMap[x][y] == "rocky shore":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,16))
+			elif tMap[x][y] == "sea ice":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,17))
+			elif tMap[x][y] == "cool sea":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,18))
+			elif tMap[x][y] == "warm sea":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,19))
+			elif tMap[x][y] == "reef":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,20))
+			elif tMap[x][y] == "ocean":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,21))
+			elif tMap[x][y] == "sulphur":
+				$".".set_cell(Vector2i(x,y),0,Vector2i(0,22))
+	print("tileset took" + str(Time.get_ticks_msec()/1000))
