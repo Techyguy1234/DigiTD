@@ -113,3 +113,15 @@ func generate_tilemap(size:int, worldseed:int = 0) -> Array:
 			elif (currentTemp == 4 and 4 >= currentHeight && currentHeight >= 3) or (currentTemp >= 5 and currentHeight >= 3):
 				biomeMap[x][y] = "sulphur"
 	return biomeMap
+
+func generate_spritemap(biomeMap:Array):
+	var spriteMap = []
+	
+	#generate pine trees
+	spriteMap.append([])
+	for x in biomeMap.size():
+		for y in biomeMap[x].size():
+			if biomeMap[x][y] == "pine forest" and randi_range(0,1) == 1:
+				spriteMap[0].append(Vector2i(x,y))
+	
+	return spriteMap

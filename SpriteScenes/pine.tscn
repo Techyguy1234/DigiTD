@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://10pnsecc3dve"]
+
+[ext_resource type="Texture2D" uid="uid://bfcnvatbqfwog" path="res://Ase/Sprites/Pine.png" id="1_gwq2v"]
+
+[node name="Pine" type="Sprite2D"]
+texture = ExtResource("1_gwq2v")

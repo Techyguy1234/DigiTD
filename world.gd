@@ -56,3 +56,10 @@ func _ready() -> void:
 			elif tMap[x][y] == "sulphur":
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,22))
 	print("tileset took" + str(Time.get_ticks_msec()/1000))
+	
+	var spriteMap = $Generation.generate_spritemap(tMap)
+	var loadedTree = load("res://SpriteScenes/pine.tscn")
+	for i in spriteMap[0].size():
+		var newTree = loadedTree.instantiate()
+		newTree.position = ((spriteMap[0][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
+		add_child(newTree)

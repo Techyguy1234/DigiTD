@@ -64,3 +64,5 @@ script = ExtResource("2_aqk2v")
 
 [node name="Generation" type="Node" parent="."]
 script = ExtResource("3_036b0")
+
+[node name="Trees" type="Node" parent="."]
