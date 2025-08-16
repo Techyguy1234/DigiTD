@@ -6,7 +6,7 @@ func _ready() -> void:
 	seed(randi())
 	
 	var tMap = $Generation.generate_tilemap(1024,randi())
-	print("world gen took" + str(Time.get_ticks_msec()/1000))
+	print("world gen took" + str(Time.get_ticks_msec()/1000.0))
 	for x in tMap.size():
 		for y in tMap.size():
 			if tMap[x][y] == "grassland":
@@ -55,7 +55,7 @@ func _ready() -> void:
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,21))
 			elif tMap[x][y] == "sulphur":
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,22))
-	print("tileset took" + str(Time.get_ticks_msec()/1000))
+	print("tileset took" + str(Time.get_ticks_msec()/1000.0))
 	
 	var spriteMap = $Generation.generate_spritemap(tMap)
 	var loadedTree = load("res://SpriteScenes/pine.tscn")
@@ -63,3 +63,10 @@ func _ready() -> void:
 		var newTree = loadedTree.instantiate()
 		newTree.position = ((spriteMap[0][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
 		add_child(newTree)
+	loadedTree = load("res://SpriteScenes/forest.tscn")
+	for i in spriteMap[1].size():
+		var newTree = loadedTree.instantiate()
+		newTree.position = ((spriteMap[1][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
+		add_child(newTree)
+	
+	print("trees took" + str(Time.get_ticks_msec()/1000.0))
