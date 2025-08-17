@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgnsui0sxhs8y"]
+
+[ext_resource type="Texture2D" uid="uid://djp5k8d8ptfre" path="res://Ase/Sprites/Cactus.png" id="1_sm5b0"]
+
+[node name="Cactus" type="Sprite2D"]
+texture = ExtResource("1_sm5b0")

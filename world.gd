@@ -24,7 +24,7 @@ func _ready() -> void:
 			elif tMap[x][y] == "savanna":
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,6))
 			elif tMap[x][y] == "cold desert":
-				$".".set_cell(Vector2i(x,y),0,Vector2i(0,7))
+				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(1,5),7))
 			elif tMap[x][y] == "hot desert":
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,8))
 			elif tMap[x][y] == "tundra":
@@ -62,11 +62,16 @@ func _ready() -> void:
 	for i in spriteMap[0].size():
 		var newTree = loadedTree.instantiate()
 		newTree.position = ((spriteMap[0][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
-		add_child(newTree)
+		$Trees.add_child(newTree)
 	loadedTree = load("res://SpriteScenes/forest.tscn")
 	for i in spriteMap[1].size():
 		var newTree = loadedTree.instantiate()
 		newTree.position = ((spriteMap[1][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
-		add_child(newTree)
+		$Trees.add_child(newTree)
+	loadedTree = load("res://SpriteScenes/cactus.tscn")
+	for i in spriteMap[2].size():
+		var newTree = loadedTree.instantiate()
+		newTree.position = ((spriteMap[2][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
+		$Trees.add_child(newTree)
 	
 	print("trees took" + str(Time.get_ticks_msec()/1000.0))

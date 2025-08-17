@@ -120,11 +120,14 @@ func generate_spritemap(biomeMap:Array):
 	#generate trees
 	spriteMap.append([])
 	spriteMap.append([])
+	spriteMap.append([])
 	for x in biomeMap.size():
 		for y in biomeMap[x].size():
 			if biomeMap[x][y] == "pine forest" and randi_range(0,1) == 1:
 				spriteMap[0].append(Vector2i(x,y))
 			elif biomeMap[x][y] == "forest" and randi_range(0,1) == 1:
 				spriteMap[1].append(Vector2i(x,y))
+			elif biomeMap[x][y] == "cold desert" and randi_range(0,8) == 1:
+				spriteMap[2].append(Vector2i(x,y))
 	
 	return spriteMap

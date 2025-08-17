@@ -52,6 +52,11 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_pkg7o"]
 tile_size = Vector2i(32, 32)
@@ -65,4 +70,4 @@ script = ExtResource("2_aqk2v")
 [node name="Generation" type="Node" parent="."]
 script = ExtResource("3_036b0")
 
-[node name="Trees" type="Node" parent="."]
+[node name="Trees" type="Node2D" parent="."]
