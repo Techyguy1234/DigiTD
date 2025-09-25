@@ -98,13 +98,13 @@ func generate_tilemap(size:int, worldseed:int = 0) -> Array:
 			elif (-5 >= currentTemp and currentHeight >= 3):
 				biomeMap[x][y] = "sea ice"
 			
-			elif (-2 >= currentTemp && currentTemp >= -4 and currentHeight == 4):
+			elif (-2 >= currentTemp && currentTemp >= -4 and (currentHeight == 4 or currentHeight == 5 or currentHeight == 6)):
 				biomeMap[x][y] = "cool sea"
 			
-			elif (1 >= currentTemp && currentTemp >= -1 and currentHeight == 4):
+			elif (1 >= currentTemp && currentTemp >= -1 and (currentHeight == 4 or currentHeight == 5 or currentHeight == 6)):
 				biomeMap[x][y] = "warm sea"
 			
-			elif (3 >= currentTemp && currentTemp >= 2 and currentHeight == 4):
+			elif (3 >= currentTemp && currentTemp >= 2 and (currentHeight == 4 or currentHeight == 5 or currentHeight == 6)):
 				biomeMap[x][y] = "reef"
 			
 			elif (4 >= currentTemp && currentTemp >= -4 and currentHeight >= 5):
