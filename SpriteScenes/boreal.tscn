@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4e6wbywm82pq"]
+
+[ext_resource type="Texture2D" uid="uid://cus0yxxvxtch5" path="res://Ase/Sprites/Boreal.png" id="1_vqh8f"]
+
+[node name="Boreal" type="Sprite2D"]
+texture = ExtResource("1_vqh8f")

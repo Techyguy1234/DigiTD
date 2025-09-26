@@ -82,5 +82,10 @@ func generate_new_world(wseed,size):
 		var newTree = loadedTree.instantiate()
 		newTree.position = ((spriteMap[2][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
 		$Trees.add_child(newTree)
+	loadedTree = load("res://SpriteScenes/boreal.tscn")
+	for i in spriteMap[3].size():
+		var newTree = loadedTree.instantiate()
+		newTree.position = ((spriteMap[3][i]) * 32) + Vector2i(16,-16) + Vector2i(randi_range(-8,8),randi_range(-8,8))
+		$Trees.add_child(newTree)
 	
 	print("trees took" + str(Time.get_ticks_msec()/1000.0))
