@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://10pnsecc3dve"]
+[gd_scene load_steps=3 format=3 uid="uid://10pnsecc3dve"]
 
 [ext_resource type="Texture2D" uid="uid://bfcnvatbqfwog" path="res://Ase/Sprites/Pine.png" id="1_gwq2v"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwq2v"]
+size = Vector2(4, 6)
+
 [node name="Pine" type="Sprite2D"]
 texture = ExtResource("1_gwq2v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_gwq2v")

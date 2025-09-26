@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs1ofvdw76pb5"]
+[gd_scene load_steps=3 format=3 uid="uid://cs1ofvdw76pb5"]
 
 [ext_resource type="Texture2D" uid="uid://c378yeegsa7np" path="res://Ase/Sprites/Forest.png" id="1_bovy7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bovy7"]
+size = Vector2(4, 10)
+
 [node name="Forest" type="Sprite2D"]
 texture = ExtResource("1_bovy7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_bovy7")
