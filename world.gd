@@ -9,6 +9,11 @@ func _ready() -> void:
 func generate_new_world(wseed,size):
 	seed(wseed)
 	
+	print("remove old trees")
+	
+	for i in $Trees.get_children():
+		i.queue_free()
+	
 	var tMap = $Generation.generate_tilemap(size,randi())
 	print("world gen took" + str(Time.get_ticks_msec()/1000.0))
 	for x in tMap.size():
