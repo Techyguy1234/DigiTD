@@ -3,9 +3,13 @@ extends TileMapLayer
 
 
 func _ready() -> void:
-	seed(randi())
+	pass
+	#generate_new_world(randi(),1024)
+
+func generate_new_world(wseed,size):
+	seed(wseed)
 	
-	var tMap = $Generation.generate_tilemap(1024,randi())
+	var tMap = $Generation.generate_tilemap(size,randi())
 	print("world gen took" + str(Time.get_ticks_msec()/1000.0))
 	for x in tMap.size():
 		for y in tMap.size():
@@ -24,9 +28,9 @@ func _ready() -> void:
 			elif tMap[x][y] == "savanna":
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,6))
 			elif tMap[x][y] == "cold desert":
-				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(1,5),7))
+				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(0,9),7))
 			elif tMap[x][y] == "hot desert":
-				$".".set_cell(Vector2i(x,y),0,Vector2i(0,8))
+				$".".set_cell(Vector2i(x,y),0,Vector2i(randi_range(0,9),8))
 			elif tMap[x][y] == "tundra":
 				$".".set_cell(Vector2i(x,y),0,Vector2i(0,9))
 			elif tMap[x][y] == "asphalt":
